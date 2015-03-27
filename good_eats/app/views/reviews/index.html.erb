@@ -6,7 +6,7 @@
 <p><%=@restaurant.description%></p>
 
 
-
+<%=link_to 'Add a review', "/restaurants/#{@restaurant.id}/reviews/new" %>
 <ul>
   <%- @review.errors.full_messages.each do |error| -%>
     <li><%= error %></li>
@@ -15,7 +15,8 @@
 
 
 <%@reviews.reverse_each do |review|%>
-  <li><%=review.description%></li>
+  <li>Rating:<%=review.rating%></li>
+    Description: <%=review.description%>
 <% end %>
 
 
