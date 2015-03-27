@@ -1,0 +1,7 @@
+<h1>Yelpbook</h1>
+
+<h5><%=link_to 'Need to add your restaurant?', new_restaurant_path%>
+<h3>Restaurants with reviews</h3>
+  <%@restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant)%></li>
+  <%-end-%>

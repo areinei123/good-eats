@@ -1,0 +1,37 @@
+<div class="header">
+
+<ul>
+  <%- @restaurant.errors.full_messages.each do |error| -%>
+    <li><%= error %></li>
+  <%-end%>
+</ul>
+
+<h1>Create a new Restaurant</h1>
+
+<%= form_for @restaurant do |f| %>
+  <p><%=f.label :name%>
+  <%=f.text_field :name%></p>
+
+  <p><%=f.label :address%>
+  <%=f.text_field :address%></p>
+
+  <p><%=f.label :city%>
+  <%=f.text_field :city%></p>
+
+  <p><%=f.label :state%>
+  <%=f.text_field :state%></p>
+
+  <p><%=f.label :zip_code%>
+  <%=f.text_field :zip_code%></p>
+
+  <p><%=f.label :description%>
+  <%=f.text_area :description%></p>
+
+  <p><%=f.label :category%>
+  <%=f.text_field :category%></p>
+
+
+
+  <%=f.submit "Add Restaurant" %>
+<%-end-%>
+</div>

@@ -1,0 +1,9 @@
+<h1><%=@restaurant.name%></h1>
+<li><%=@restaurant.category%></li>
+<%=@restaurant.address%>; <%=@restaurant.city%>, <%=@restaurant.state%>
+  (<%=@restaurant.zip_code%>)
+
+<p><%=@restaurant.description%></p>
+
+
+<%=link_to 'Add a review', "/restaurants/#{@restaurant.id}/reviews/new" %>

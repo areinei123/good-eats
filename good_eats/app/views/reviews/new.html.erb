@@ -1,0 +1,12 @@
+<h1>Add a Review</h1>
+
+<%= form_for [@restaurant, @review] do |f| %>
+  <%Review::RATING.each do |rating|%>
+    <%=f.label("Rating", rating)%>
+    <%=f.radio_button(:rating, rating)%>
+  <%end%>
+
+  <p><%=f.label :description %></p>
+  <%=f.text_area :description, size: "60x12" %>
+  <%=f.submit "Add Answer" %>
+<%end%>

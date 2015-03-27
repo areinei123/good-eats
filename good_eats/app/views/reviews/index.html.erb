@@ -1,0 +1,22 @@
+<h1><%=@restaurant.name%></h1>
+<li><%=@restaurant.category%></li>
+<%=@restaurant.address%>; <%=@restaurant.city%>, <%=@restaurant.state%>
+  (<%=@restaurant.zip_code%>)
+
+<p><%=@restaurant.description%></p>
+
+
+
+<ul>
+  <%- @review.errors.full_messages.each do |error| -%>
+    <li><%= error %></li>
+  <%-end%>
+</ul>
+
+
+<%@reviews.reverse_each do |review|%>
+  <li><%=review.description%></li>
+<% end %>
+
+
+<%= render template: 'reviews/new' %>
